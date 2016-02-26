@@ -4,22 +4,88 @@
   box-sizing: border-box;
 }
 
+
+/* Base Styles ---------- */
+
 body {
   font-family: 'Open Sans', sans-serif;
   color: #394A5D;
+	font-size: .9em;
+  font-weight: 300;
+	margin: 0;
 }
+
+.main-container {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.main-header,
+.intro,
+.copyright {
+	text-align: center;
+}
+
+.main-header {
+	background: #222B35;
+	width: 100%;
+	margin: 0;
+	padding: 25px;
+}
+
+.main-header > h1 {
+	font-size: 1.4em;
+	text-transform: uppercase;
+	color: #fff;
+	margin: 0;
+}
+
+.intro {
+	border-bottom: solid 3px #222B35;
+	width: 90%;
+	margin: 20px auto;
+	position: relative;
+}
+
+.intro::after {
+	display:block; 
+	content:'';
+  width:100%; 
+	height: 8px;
+	position: absolute;
+  border-bottom: solid 2px #222B35;
+}
+
+.intro > h2 {
+	font-size: 1.2em;
+}
+
+.intro p {
+	color: #999FA5;
+	margin-top: 10px;
+	font-size: .9em;
+	padding-bottom: 20px;
+}
+
+h1,
+h2,
+legend {
+  color: #222B35;
+}
+
+
+
+
+
+/* Form Styles ---------- */
 
 form {
   max-width: 300px;
-  margin: 10px auto;
-  padding: 10px 20px;
+  margin: 30px auto;
+  padding: 0;
   background: #fff;
-/*  border-radius: 8px;*/
-}
-
-h1 {
-  margin: 0 0 30px 0;
-  text-align: center;
+	padding-left: 5px;
+  padding-right: 5px;
 }
 
 input[type="text"],
@@ -31,58 +97,185 @@ select {
   background: rgba(255,255,255,0.1);
   border: none;
   font-size: 16px;
-  height: auto;
-  margin: 0;
   outline: 0;
   padding: 15px;
   width: 100%;
+	height: auto;
   background-color: #ebecee;
-/*  color: #8a97a0;*/
-/*  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;*/
-  margin-bottom: 30px;
+  margin: 0 0 18px;
+	border-radius: 3px;
+}
+
+/* -----------------------------
+			Custom Form Styles 
+--------------------------------*/
+
+/* Select Styles */
+
+.styled-select {
+	background: url('../images/chev-down-2.jpg') no-repeat right;
+  background-color: #ebecee;
+  padding: 15px;
+	height: 50px;
+  margin: 0 0 18px;
+	border-radius: 3px;
+	width: 295px;
+	overflow: hidden;
+}
+
+select[id="state"] {
+	font-size: .9em;
+	color: #979DA3;
+	margin-top: -20px;
+	font-weight: 300;
+	background: transparent;
+	width: 300px;
+}
+
+
+/* Number Field Styles */
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button,
+input[id="zip"]{ 
+  -webkit-appearance: none; 
+  width: 50% 
+}
+
+/* Checkbox & Radio Styles*/
+
+input[type="checkbox"],
+input[type="radio"]
+{
+	display: none;
+}
+
+input[type="checkbox"] + label span {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: -4px 10px 0 0;
+	vertical-align: middle;
+	background: #EBECEE;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+	background: url('../images/checkbox-checked.png') no-repeat 0 1px;
+}
+
+label[for^="type"],
+label[for^="format"] {
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+input[type="radio"] + label span {
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	margin: -4px 10px 0 0;
+	vertical-align: middle;
+	background: #EBECEE;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+input[type="radio"]:checked + label span {
+	background: url('../images/radio-button.png') no-repeat;
+}
+
+
+/* Text Area  */
+
+textarea {
+  resize: none;
+	height: 100px;
 	border-radius: 5px;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-  margin: 0 4px 8px 0;
-}
-
-select {
-  padding: 6px;
-  height: 32px;
-  border-radius: 2px;
-}
 
 button {
   padding: 19px 39px 18px 39px;
   color: #FFF;
-  background-color: 41AFA6;
+  background-color: #41AFA6;
   font-size: 18px;
   text-align: center;
   font-style: normal;
   border-radius: 5px;
-  width: 100%;
-  border: 1px solid #3ac162;
-  border-width: 1px 1px 3px;
-/*  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;*/
   margin-bottom: 10px;
+	width: 100%;
+	border: none;
 }
 
 fieldset {
-  margin-bottom: 30px;
+  margin: 0 0 20px 0;
+	padding: 0;
   border: none;
 }
 
 legend {
-  font-size: 1.4em;
-  margin-bottom: 10px;
+	font-size: 1.2em;
+	margin: 20px 0;
+	font-weight: 700;
+	padding: 0;
 }
 
 label {
   display: block;
   margin-bottom: 8px;
 }
+
+.contact {
+	padding-bottom: 20px;
+	border-bottom: solid 2px #222B35;
+}
+
+.copyright p {
+	font-style: italic;
+	font-size: .9em;
+	margin-top: -15px;
+	margin-bottom: 30px;
+	color: #9EA2A7;
+}
+
+
+/* Attribute Styles -------- */
+
+
+input[placeholder="Required"] {
+	text-align: right;
+	font-size: .9em;
+	font-weight: 300;
+	font-style: italic;
+	opacity: 0.7;
+}
+
+input[placeholder="Required"]:focus {
+	text-align: left;
+}
+
+
+input:focus::-webkit-input-placeholder{
+	color: transparent!important;  /* Removes the placeholder on focus	 */
+}
+input:focus::-moz-placeholder{
+	color: transparent!important;
+}
+input:focus:-moz-placeholder{
+	color: transparent!important;
+}
+
+
+
+/* Psuedo Styles ---------- */
+
+input:focus,
+textarea:focus {
+	border: solid 2px #375578;
+}
+
 
 /*
 label.light {
