@@ -7,11 +7,12 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #435467;
+  color: #0D2540;
 	font-size: .9em;
   font-weight: 300;
 	margin: 0;
 	padding: 0;
+	background: linear-gradient(to bottom, rgb(124, 137, 152) 0%, rgba(84,95,107,1) 15%, rgba(84,95,107,1) 30%, rgba(164,170,176,1) 45%, rgba(233,239,245,1) 100%);
 }
 
 .main-container {
@@ -85,8 +86,14 @@ legend {
 	border-bottom: solid 2px #222B35;
 }
 
-.contact legend {
+.contact legend,
+.payment-container legend {
 	margin: 20px 0;
+}
+
+.payment-container {
+	padding-bottom: 20px;
+	border-bottom: solid 2px #222B35;
 }
 
 .copyright p {
@@ -115,12 +122,51 @@ select {
   background: rgba(255,255,255,0.1);
   border: none;
   outline: 0;
-  padding: 15px;
+  padding: 15px 15px 15px 30px;
   width: 100%;
 	height: auto;
   background-color: #ebecee;
   margin: 0 0 18px;
 	border-radius: 3px;
+	font-style: normal;
+	font-size: 1em;
+}
+
+.icon-placement {
+	position: relative;
+}
+
+.label-icon > .fa {
+	color: #5B6571;
+	position: relative;
+	top: 40px;
+	left: 25px;
+	z-index: 1000;
+	font-size: 1.2em;
+}
+
+label[class="label-icon"] {
+	margin-left: -15px;
+}
+
+.input-half-left,
+.input-half-right {
+	float: left;
+	width: 50%;
+	margin-bottom: 0;
+}
+
+.input-half-left input[type="text"] {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-right: 1px solid grey;
+	margin-bottom: 0;
+}
+
+.input-half-right input[type="text"] {
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	margin-bottom: 0;
 }
 
 fieldset {
@@ -274,7 +320,8 @@ input:focus:-moz-placeholder{
 
 input:focus,
 textarea:focus {
-	border: solid 2px #375578;
+	border: solid 2px #222B35;
+	padding-left: 30px;
 }
 
 
