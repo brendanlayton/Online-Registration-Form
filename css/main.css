@@ -5,19 +5,26 @@
 }
 
 
-/* Base Styles ---------- */
-
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #394A5D;
+  color: #435467;
 	font-size: .9em;
   font-weight: 300;
 	margin: 0;
+	padding: 0;
 }
 
 .main-container {
-	width: 95%;
+	width: 92%;
 	margin: 0 auto;
+}
+
+.news-container {
+	padding-left: 5px;
+}
+
+.news-container legend {
+	margin-left: -5px;
 }
 
 .main-header,
@@ -42,7 +49,7 @@ body {
 
 .intro {
 	border-bottom: solid 3px #222B35;
-	width: 90%;
+/*	width: 90%;*/
 	margin: 20px auto;
 	position: relative;
 }
@@ -57,14 +64,14 @@ body {
 }
 
 .intro > h2 {
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 
 .intro p {
 	color: #999FA5;
-	margin-top: 10px;
-	font-size: .9em;
-	padding-bottom: 20px;
+	margin: 10px 15px 0;
+	font-size: 1em;
+	padding-bottom: 35px;
 }
 
 h1,
@@ -73,30 +80,40 @@ legend {
   color: #222B35;
 }
 
+.contact {
+	padding-bottom: 20px;
+	border-bottom: solid 2px #222B35;
+}
+
+.contact legend {
+	margin: 20px 0;
+}
+
+.copyright p {
+	font-style: italic;
+	font-size: .9em;
+	margin-top: -15px;
+	margin-bottom: 30px;
+	color: #9EA2A7;
+}
 
 
-
-
-/* Form Styles ---------- */
+/* Standard Form Styles ---------- */
 
 form {
   max-width: 300px;
   margin: 30px auto;
   padding: 0;
-  background: #fff;
-	padding-left: 5px;
-  padding-right: 5px;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="tel"],
-textarea,
+textarea ,
 select {
   background: rgba(255,255,255,0.1);
   border: none;
-  font-size: 16px;
   outline: 0;
   padding: 15px;
   width: 100%;
@@ -104,6 +121,37 @@ select {
   background-color: #ebecee;
   margin: 0 0 18px;
 	border-radius: 3px;
+}
+
+fieldset {
+  margin: 0 0 20px 0;
+	padding: 0;
+  border: none;
+}
+
+legend {
+	font-size: 1.2em;
+	font-weight: 700;
+	margin: 0;
+	padding: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #41AFA6;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  margin-bottom: 10px;
+	width: 100%;
+	border: none;
 }
 
 /* -----------------------------
@@ -158,7 +206,6 @@ input[type="checkbox"] + label span {
 	vertical-align: middle;
 	background: #EBECEE;
 	border-radius: 3px;
-	cursor: pointer;
 }
 
 input[type="checkbox"]:checked + label span {
@@ -179,7 +226,6 @@ input[type="radio"] + label span {
 	vertical-align: middle;
 	background: #EBECEE;
 	border-radius: 50%;
-	cursor: pointer;
 }
 
 input[type="radio"]:checked + label span {
@@ -193,51 +239,7 @@ textarea {
   resize: none;
 	height: 100px;
 	border-radius: 5px;
-}
-
-
-button {
-  padding: 19px 39px 18px 39px;
-  color: #FFF;
-  background-color: #41AFA6;
-  font-size: 18px;
-  text-align: center;
-  font-style: normal;
-  border-radius: 5px;
-  margin-bottom: 10px;
-	width: 100%;
-	border: none;
-}
-
-fieldset {
-  margin: 0 0 20px 0;
-	padding: 0;
-  border: none;
-}
-
-legend {
-	font-size: 1.2em;
-	margin: 20px 0;
-	font-weight: 700;
-	padding: 0;
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-.contact {
-	padding-bottom: 20px;
-	border-bottom: solid 2px #222B35;
-}
-
-.copyright p {
-	font-style: italic;
-	font-size: .9em;
-	margin-top: -15px;
-	margin-bottom: 30px;
-	color: #9EA2A7;
+	margin-bottom: 5px;
 }
 
 
@@ -256,15 +258,14 @@ input[placeholder="Required"]:focus {
 	text-align: left;
 }
 
-
 input:focus::-webkit-input-placeholder{
-	color: transparent!important;  /* Removes the placeholder on focus	 */
+	color: transparent!important;  /*  Removes the placeholder on focus	 */
 }
 input:focus::-moz-placeholder{
-	color: transparent!important;
+	color: transparent!important;  /*  Removes the placeholder on focus	 */
 }
 input:focus:-moz-placeholder{
-	color: transparent!important;
+	color: transparent!important;  /*  Removes the placeholder on focus	 */
 }
 
 
@@ -277,28 +278,6 @@ textarea:focus {
 }
 
 
-/*
-label.light {
-  font-weight: 300;
-  display: inline;
-}
-*/
-
-/*
-.number {
-  background-color: #5fcf80;
-  color: #fff;
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  font-size: 0.8em;
-  margin-right: 4px;
-  line-height: 30px;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
-  border-radius: 100%;
-}
-*/
 
 @media screen and (min-width: 480px) {
 
@@ -306,4 +285,12 @@ label.light {
     max-width: 480px;
   }
 
+}
+
+@media screen and (min-width: 769px) {
+	
+	input[type="radio"] + label span,
+	input[type="checkbox"] + label span {
+		cursor: pointer;
+	}
 }
