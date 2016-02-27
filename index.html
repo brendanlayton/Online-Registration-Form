@@ -115,16 +115,24 @@
 					<div class="payment-container">
 						<fieldset>
 							<legend>Payment Details</legend>
-								<input type="number" placeholder="Card Number" id="card-number" name="card-number">
+								<div class="icon-placement">
+									<label for="card-number" class="label-icon"><i class="fa fa-credit-card-alt"></i></label>	
+									<input type="number" placeholder="Card Number" id="card-number" name="card-number">
+								</div>
 								<div class="input-half-left">
-									<input type="text" placeholder="MM/YY" name="expiry-date" id="expiry-date" class="">
+									<div class="icon-placement">
+										<label for="expiry-date" class="label-icon"><i class="fa fa-calendar-o"></i></label>	
+										<input type="text" placeholder="MM/YY" name="expiry-date" id="expiry-date" class="">
+									</div>
 								</div>
 								<div class="input-half-right">
-									<input type="text" placeholder="CVC" name="cvc" id="cvc" class="">
+									<div class="icon-placement">
+										<label for="cvc" class="label-icon"><i class="fa fa-lock"></i></label>	
+										<input type="text" placeholder="CVC" name="cvc" id="cvc" class="">
+									</div>
 								</div>
 						</fieldset>
-					</div>	
-					
+					</div>
 					<!--/ Payment Information-->  
 					
 					<div class="news-container">
