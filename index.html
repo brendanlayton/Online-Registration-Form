@@ -28,7 +28,7 @@
 								<label for="name" class="label-icon"><i class="fa fa-pencil-square"></i>Full Name</label>
 							</div>	
 							<div class="form-right">	
-								<input type="text" id="name" name="user_name" placeholder="Required">
+								<input type="text" id="name" name="user_name" placeholder="Required" aria-describedby="name-format"  aria-required="true" required pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+"  title="firstname lastname"><span id="name-format" class="help">Format: firstname lastname</span>
 							</div>	
 						</div>
 						
@@ -36,8 +36,8 @@
 							<div class="form-left">	
 								<label for="mail" class="label-icon"><i class="fa fa-envelope"></i>Email Address</label>
 							</div>
-							<div class="form-right">	
-								<input type="email" id="mail" name="user_email" placeholder="Required"> <!--HTML5 Input Type-->
+							<div class="form-right">
+								<input type="email" id="mail" name="user_email" placeholder="Required" aria-required="true" required> <!--HTML5 Input Type-->
 							</div>
 						</div>
 						
@@ -67,7 +67,7 @@
 								<input type="text" id="city" name="user_city">
 							</div>
 						</div>	
-
+						
 						<div class="form-left">	
 							<label for="state">State</label>
 						</div>
@@ -129,7 +129,6 @@
 							</select>	
 							</div>
 						</div>
-
 						<div class="form-left">	
 							<label for="zip">Zip Code</label>
 						</div>
@@ -150,20 +149,21 @@
 										<div class="form-right">
 											<input type="number" placeholder="Card Number" id="card-number" name="card-number">
 										</div>
-										<div class="icon-placement">
-											<div class="form-left">
-												<label for="expiry-date" class="payment-icon"><i class="fa fa-calendar-o"></i>Expiry</label>
-												<label for="cvc" class="payment-icon cvc"><i class="fa fa-lock"></i>Security Code</label>
+									</div>
+									<div class="icon-placement">
+										<div class="form-left">
+											<label for="expiry-date" class="payment-icon"><i class="fa fa-calendar-o"></i>Expiry</label>
+											<label for="cvc" class="payment-icon cvc"><i class="fa fa-lock"></i>Security Code</label>
+										</div>
+										<div class="form-right">	
+											<div class="input-half-left">
+												<input type="text" placeholder="MM/YY" name="expiry-date" id="expiry-date" class="">
 											</div>
-											<div class="form-right">	
-												<div class="input-half-left">
-													<input type="text" placeholder="MM/YY" name="expiry-date" id="expiry-date" class="">
-												</div>
-												<div class="input-half-right">
-													<input type="text" placeholder="CVC" name="cvc" id="cvc" class="cvc">
-												</div>
+											<div class="input-half-right">
+												<input type="text" placeholder="CVC" name="cvc" id="cvc" class="cvc">
 											</div>
 										</div>
+									</div>
 						</fieldset>
 					</div>
 					<!--/ Payment Information-->  

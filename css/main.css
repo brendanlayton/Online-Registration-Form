@@ -5,6 +5,8 @@
 }
 
 
+/****** Base Styles ******/
+
 body {
   font-family: 'Open Sans', sans-serif;
   color: #0D2540;
@@ -15,22 +17,17 @@ body {
 	background: linear-gradient(to bottom, #222B35 0%, rgb(124, 137, 152) 15%, rgb(154, 163, 175) 30%, rgb(240, 245, 251) 65%, rgba(233,239,245,1) 90%);
 }
 
+h1,
+h2,
+legend {
+  color: #222B35;
+}
+
+/****** Section Layout ******/
+
 .main-container {
 	width: 92%;
 	margin: 0 auto;
-}
-
-.contact,
-.payment-container {
-	margin-bottom: 40px;
-}
-
-.news-container {
-	padding-left: 5px;
-}
-
-.news-container legend {
-	margin-left: -5px;
 }
 
 .main-header,
@@ -38,6 +35,9 @@ body {
 .copyright {
 	text-align: center;
 }
+
+
+/****** Section Styles ******/
 
 .main-header {
 	background: #222B35;
@@ -55,7 +55,6 @@ body {
 
 .intro {
 	border-bottom: solid 3px #222B35;
-/*	width: 90%;*/
 	margin: 20px auto;
 	position: relative;
 }
@@ -80,25 +79,24 @@ body {
 	padding-bottom: 35px;
 }
 
-h1,
-h2,
-legend {
-  color: #222B35;
-}
-
+.payment-container,
 .contact {
 	padding-bottom: 20px;
 	border-bottom: solid 2px #222B35;
+	margin-bottom: 40px;
 }
 
-.contact legend,
-.payment-container legend {
+.payment-container legend, 
+.contact legend {
 	margin-bottom: 20px;
 }
 
-.payment-container {
-	padding-bottom: 20px;
-	border-bottom: solid 2px #222B35;
+.news-container {
+	padding-left: 5px;
+}
+
+.news-container legend {
+	margin-left: -5px;
 }
 
 .copyright p {
@@ -110,19 +108,23 @@ legend {
 }
 
 
-/* Standard Form Styles ---------- */
+/****** Form Layout ******/
 
 form {
-  max-width: 300px;
   margin: 30px auto;
   padding: 0;
 }
+
+
+/****** Form - Base Styles ******/
+
+/* Input Styles */
 
 input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="tel"],
-textarea ,
+textarea,
 select {
   border: none;
   outline: 0;
@@ -141,14 +143,89 @@ input:focus,
 textarea:focus,
 .input-half-left input[type="text"]:focus,
 .input-half-right input[type="text"]:focus {
-/*	border: solid 2px rgb(65, 175, 166);*/
 	padding-left: 40px;
-	background-color: rgba(65, 175, 166, 0.1);
+	background-color: rgba(5, 162, 149, 0.1);
 	color: #424242;
+	border: solid 2px #375578;
 }
+
+fieldset {
+  margin: 0 0 20px 0;
+	padding: 0;
+  border: none;
+}
+
+legend {
+	font-size: 1.2em;
+	font-weight: 700;
+	padding: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/****** Form - Section Styles ******/
+
+/* Placeholder Styles */
+
+
+/*
+input[placeholder="Required"] {
+	text-align: right;
+	font-size: .9em;
+	font-weight: 300;
+	font-style: italic;
+	opacity: 0.7;
+}
+The ::placeholder pseudo element below has 90% browser support/partial suppot but returns a validation error. The rule above to be used if deemed necesary. */
+
+input[placeholder="Required"]::placeholder {
+	text-align: right;
+	font-size: .9em;
+	font-weight: 300;
+	font-style: italic;
+	opacity: 0.7;
+}
+
+input[placeholder="Required"]::-webkit-input-placeholder { text-align: right; font-size: .9em; font-weight: 300; font-style: italic; opacity: 0.7; } /* (Chrome/Safari/Opera) */
+input[placeholder="Required"]:-ms-input-placeholder { text-align: right; font-size: .9em; font-weight: 300; font-style: italic; opacity: 0.7; } /* for IE */
+input[placeholder="Required"]::-ms-input-placeholder { text-align: right; font-size: .9em; font-weight: 300; font-style: italic; opacity: 0.7; } /* for Edge (also supports webkit prefix) */
+
+
+input[placeholder="Required"]:focus {
+	text-align: left;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }  /* This rule set removes placeholder on focus */
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+.help {
+	display: none;
+	font-size: 1em;
+	color: #1A8077;
+	vertical-align: top;
+	margin-top: -12px;
+	margin-left: 40px;
+	font-style: italic; 
+}
+
+input:focus + .help {
+	display:inline-block;
+}
+
+
+/* Icon Styles */
 
 .icon-placement {
 	position: relative;
+}
+
+.fa {
+	min-width: 30px;
 }
 
 .label-icon > .fa,
@@ -156,14 +233,71 @@ textarea:focus,
 	color: #5B6571;
 	position: relative;
 	top: 40px;
-	left: 25px;
+	left: 40px;
 	z-index: 1000;
 	font-size: 1.2em;
 }
 
-label[class="label-icon"],
+label[class="label-icon"] {
+	margin-left: -23px;
+}
+
 label[class="payment-icon"] {
-	margin-left: -15px;
+	margin-left: -27px;
+}
+
+label[for="cvc"] {
+	margin-left: 80px;
+}
+
+label[for="state"],
+label[for="zip"] {
+	margin-left: 6px; 	/*	For some reason the state and zip labels became unaligned when the icons were added */
+}
+
+
+/* Select Styles */
+
+.styled-select {
+	background: url('../images/chev-down-2.jpg') no-repeat right;
+  background-color: #ebecee;
+  padding: 15px;
+	height: 50px;
+  margin: 0 0 18px;
+	border-radius: 3px;
+	width: 100%;  /* this rule helps remove the default selector icon */
+	overflow: hidden; /* this rule helps remove the default selector icon */
+}
+
+select[id="state"] {
+	font-size: .9em;
+	color: #979DA3;
+	margin-top: -20px;
+	font-weight: 300;
+	background: transparent; 
+	width: 110%; /* this rule helps remove the default selector icon */
+}
+
+
+/* Number Field Styles */
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button,
+input[id="zip"]{ 
+  -webkit-appearance: none; 
+  width: 50% 
+}
+
+
+/* Payment Section Styles */
+
+.payment-container label {
+	margin-top: 5px;
+}
+
+label[for="expiry-date"],
+label[for="cvc"] {
+	display: inline-block;
 }
 
 .input-half-left,
@@ -190,90 +324,17 @@ label[class="payment-icon"] {
 	margin-left: -4px;
 }
 
-label[for="expiry-date"],
-label[for="cvc"] {
+
+/* Checkbox & Radio Styles */
+
+label[for^="type"],
+label[for^="format"] {
 	display: inline-block;
+	margin-bottom: 20px;
 }
-
-label[for="cvc"] {
-	margin-left: 96px;
-}
-
-.payment-container label {
-	margin-top: 5px;
-}
-
-fieldset {
-  margin: 0 0 20px 0;
-	padding: 0;
-  border: none;
-}
-
-legend {
-	font-size: 1.2em;
-	font-weight: 700;
-	padding: 0;
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-button {
-  padding: 19px 39px 18px 39px;
-  color: #FFF;
-  background-color: #41AFA6;
-  font-size: 18px;
-  text-align: center;
-  font-style: normal;
-  border-radius: 5px;
-  margin-bottom: 10px;
-	width: 100%;
-	border: none;
-}
-
-/* -----------------------------
-			Custom Form Styles 
---------------------------------*/
-
-/* Select Styles */
-
-.styled-select {
-	background: url('../images/chev-down-2.jpg') no-repeat right;
-  background-color: #ebecee;
-  padding: 15px;
-	height: 50px;
-  margin: 0 0 18px;
-	border-radius: 3px;
-	width: 100%;
-	overflow: hidden;
-}
-
-select[id="state"] {
-	font-size: .9em;
-	color: #979DA3;
-	margin-top: -20px;
-	font-weight: 300;
-	background: transparent;
-	width: 110%;
-}
-
-
-/* Number Field Styles */
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button,
-input[id="zip"]{ 
-  -webkit-appearance: none; 
-  width: 50% 
-}
-
-/* Checkbox & Radio Styles*/
 
 input[type="checkbox"],
-input[type="radio"]
-{
+input[type="radio"] {
 	display: none;
 }
 
@@ -289,12 +350,6 @@ input[type="checkbox"] + label span {
 
 input[type="checkbox"]:checked + label span {
 	background: url('../images/checkbox-checked.png') no-repeat 0 1px;
-}
-
-label[for^="type"],
-label[for^="format"] {
-	display: inline-block;
-	margin-bottom: 20px;
 }
 
 input[type="radio"] + label span {
@@ -323,31 +378,29 @@ textarea {
 }
 
 
-/* Attribute Styles -------- */
+/* Button  */
 
-
-input[placeholder="Required"] {
-	text-align: right;
-	font-size: .9em;
-	font-weight: 300;
-	font-style: italic;
-	opacity: 0.7;
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #41AFA6;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  margin-bottom: 10px;
+	width: 100%;
+	border: none;
 }
 
-input[placeholder="Required"]:focus {
-	text-align: left;
-}
+/* For large smartphones such as iPhone6 */
 
-input:focus::-webkit-input-placeholder{
-	color: transparent!important;  /*  Removes the placeholder on focus	 */
-}
-input:focus::-moz-placeholder{
-	color: transparent!important;  /*  Removes the placeholder on focus	 */
-}
-input:focus:-moz-placeholder{
-	color: transparent!important;  /*  Removes the placeholder on focus	 */
-}
+@media screen and (min-width: 375px) {
 
+	.payment-icon + .cvc > .fa {
+    left: 60px;
+	}
+}
 
 
 @media screen and (min-width: 480px) {
@@ -360,29 +413,23 @@ input:focus:-moz-placeholder{
 		width: 68%;
 	}
 
+	label[for="cvc"] {
+    margin-left: 170px;
+	}
+	
 	.payment-icon + .cvc > .fa {
-    left: 114px;
+    left: 42px;
 	}
 }
 
 @media screen and (min-width: 769px) {
 	
-	input[type="radio"] + label span,
-	input[type="checkbox"] + label span {
-		cursor: pointer;
-	}
-	
-	.main-container,
 	form,
+	.main-container,
 	.intro {
     max-width: 600px;
 		width: 100%;
   }
-
-	.intro > h2 {
-    font-size: 1.6em;
-		margin-bottom: 10px;
-	}
 	
 	.form-left {
 		width: 25%;
@@ -393,6 +440,16 @@ input:focus:-moz-placeholder{
 	.form-right {
 		width: 74%;
 		float: left;
+	}
+
+	.intro > h2 {
+    font-size: 1.6em;
+		margin-bottom: 10px;
+	}
+
+	input[type="radio"] + label span,
+	input[type="checkbox"] + label span {
+		cursor: pointer;
 	}
 	
 	label,
@@ -408,15 +465,15 @@ input:focus:-moz-placeholder{
 	.label-icon > .fa,
 	.payment-icon .fa {
     top: 0;
-		left: 180px;
+		left: 195px;
 	}
 	
 	.payment-icon + .cvc > .fa {
-    left: 352px;
+    left: 375px;
 	}
 	
 	label[for="cvc"] {
-    margin-left: -10px;
+    margin-left: -30px;
 	}
 	
 	label[for="expiry-date"]:after {
